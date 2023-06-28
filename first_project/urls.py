@@ -23,4 +23,8 @@ urlpatterns = [
     path('index/', views.index),
     path('lunch/', views.lunch),
     path('lotto/', views.lotto),
+    path('hello/<str:name>/',views.hello),
+    path('cube/<int:num>',views.cube),
+    path('posts', views.posts),
+    path('menus', views.menus),
 ]

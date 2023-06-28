@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{lotto}}</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>이번주 당첨번호</h1>
+    {% for num in lotto_number %}
+        <div style="width:25px" class="border rounded-circle d-inline-block bg-warning text-center">{{num}}</div>
+    {% endfor %}
+    
+    <h1>행운의 번호</h1>
+    {% for num in lucky_num %}
+        <div style="width:25px" class="border rounded-circle d-inline-block bg-success text-center">{{num}}</div>
+    {% endfor %}
+    
+    {% if num > 1 %}
+        <p>{{num}}개가 일치합니다. 당첨입니다.</p>
+    {% else %}
+        <p>꽝입니다.</p>
+    {% endif %}
+{% endblock %}
